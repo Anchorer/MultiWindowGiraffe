@@ -25,6 +25,8 @@ public class WebActivity extends AppCompatActivity {
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new WebViewClient());
 
+        mWebView.setOnDragListener(new GiraffeDragEventListener(this));
+
         Intent mIntent = getIntent();
         String url = mIntent.getStringExtra(FIELD_URL);
         mWebView.loadUrl(url);
